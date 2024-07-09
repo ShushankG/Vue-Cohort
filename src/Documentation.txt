@@ -1,0 +1,31 @@
+v-bind or : =>
+
+Used to bind an attribute of an element to a data state.
+Example: <input type="text" :value="name"/>
+Here, name is a data state variable, such as data(){return { name: 'Shushank' }}
+The colon (:) is shorthand for v-bind.
+
+v-model =>
+
+Used for two-way data binding between form input elements and data states.
+Example: <input type="text" v-model="newHero">
+Changes in the input field will reflect in the newHero data state and vice versa.
+Useful for input elements like text fields, checkboxes, radio buttons, etc.
+
+v-model.lazy =>
+
+This modifier is used with v-model to update the data state only after certain events, such as change or blur, instead of after every input event.
+Example: <textarea v-model.lazy="textInput"></textarea>
+Changes to textInput will be synchronized with the data state when the input element loses focus.
+
+v-for =>
+    <li v-for="hero in Heros" :key="hero">
+        {{ hero }}
+      </li>
+ data(){return { heroes=['h1','h2','h3'] }}   
+
+hero is the variable name you choose to represent each item in the array during iteration.
+heroes is the array defined in the Vue instance's data() method, containing strings 'h1', 'h2', and 'h3'.
+:key="hero" is a special attribute required by Vue when using v-for to identify each rendered item uniquely. It's important for Vue's efficient rendering and reactivity.
+
+                     

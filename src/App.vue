@@ -7,7 +7,8 @@
       </li>
     </ul>
     <button :disabled="isActive">Add Hero</button>
-    <input type="text" :placeholder="placeholderValue">
+    <input type="text" v-model="newHero" :disabled="isActive">
+   <div> <textarea v-model.lazy="textInput"></textarea></div>
   </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
     return {
       name: ["superman", "batman", "flash"],
       isActive:false,
-      placeholderValue:"Hero-Name"
+      newHero:"Hero-Name",
+      textInput:""
     };
   }
 };
