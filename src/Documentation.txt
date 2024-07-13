@@ -28,4 +28,5 @@ hero is the variable name you choose to represent each item in the array during 
 heroes is the array defined in the Vue instance's data() method, containing strings 'h1', 'h2', and 'h3'.
 :key="hero" is a special attribute required by Vue when using v-for to identify each rendered item uniquely. It's important for Vue's efficient rendering and reactivity.
 
-                     
+v-on or @=>
+Event click,hover,type 

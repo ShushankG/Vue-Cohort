@@ -4,13 +4,13 @@
   <div>
     <h1>DC Heroes</h1>
     <ul>
-      <li v-for="hero in name" :key="hero">
+      <li v-for="(hero,index) in name" :key="hero">
         {{ hero }}
+    <button @click="clearHero(index)" :disabled="isActive">X</button>
       </li>
     </ul>
-    <button :disabled="isActive">Add Hero</button>
     <input type="text" v-model="newHero" :disabled="isActive">
-   <div> <textarea v-model.lazy="textInput"></textarea></div>
+    <button @click="addhero" :disabled="isActive">Add Hero</button>
   </div>
 </template>
 
@@ -20,9 +20,19 @@ export default {
     return {
       name: ["superman", "batman", "flash"],
       isActive:false,
-      newHero:"Hero-Name",
-      textInput:""
+      newHero:"",
     };
+  },
+  methods:{
+addhero(){
+if(this.newHero!=""){
+  this.name.push(this.newHero);
+}
+},
+clearHero(index){
+// this.name=this.name.filter((val)=>{ return val!=hero});
+this.name.splice(index, 1,"deleted");
+}
   }
 };
 </script>
